@@ -24,12 +24,14 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: Addon",
-        "Framework :: Plone :: 5.2",
         "Framework :: Plone :: 6.0",
+        "Framework :: Plone :: 6.1",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
@@ -43,13 +45,13 @@ setup(
         'Tracker': 'https://github.com/collective/collective.contactformprotection/issues',
         # 'Documentation': 'https://collective.contactformprotection.readthedocs.io/en/latest/',
     },
-    license='GPL version 2',
+    license='GPL version 3',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['collective'],
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
@@ -71,7 +73,5 @@ setup(
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
-    [console_scripts]
-    update_locale = collective.contactformprotection.locales.update:update_locale
     """,
 )
