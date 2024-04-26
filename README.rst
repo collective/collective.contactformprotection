@@ -31,33 +31,27 @@
 collective.contactformprotection
 ================================
 
-This package protects the default contact form of Plone which is generally accessible via /contact-form. We add a (H/Re)captcha field depending on your installation and provide a checkbox in the controlpanel to disable it globally.
+This package protects the default contact form of Plone which is generally accessible via `/contact-info`.
 
 Features
 --------
 
-- Can be bullet points
+- Add a (H/Re)captcha field depending on the installed 3rd party addon. This can be installed as `extra_require` optionally.
+  In case both are installed, you can choose whichone you want in the controlpanel.
 
+```
+eggs =
+    collective.contactformprotection[hcaptcha,recaptcha]
+```
 
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+- Provide a checkbox in the controlpanel to disable the form globally
 
 
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+The features mentioned above are all set in the configuration registry. See `plone.app.registry` how to set these
+values TTW or in a package profile.
 
 
 Installation
@@ -79,33 +73,18 @@ and then running ``bin/buildout``
 Authors
 -------
 
-Provided by awesome people ;)
+Peter Mathis, petschki
 
-
-Contributors
-------------
-
-Put your name here, you deserve it!
-
-- ?
 
 
 Contribute
 ----------
 
 - Issue Tracker: https://github.com/collective/collective.contactformprotection/issues
-- Source Code: https://github.com/collective/collective.contactformprotection
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+- Source Code/Documentation: https://github.com/collective/collective.contactformprotection
 
 
 License
 -------
 
-The project is licensed under the GPLv2.
+The project is licensed under the GPLv3.

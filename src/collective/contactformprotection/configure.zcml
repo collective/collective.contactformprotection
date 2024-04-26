@@ -1,8 +1,11 @@
-<configure xmlns="http://namespaces.zope.org/zope"
-  xmlns:browser="http://namespaces.zope.org/browser"
-  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-  xmlns:i18n="http://namespaces.zope.org/i18n"
-  xmlns:plone="http://namespaces.plone.org/plone" i18n_domain="collective.contactformprotection">
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.contactformprotection"
+    >
 
   <i18n:registerTranslations directory="locales" />
 
@@ -10,18 +13,44 @@
 
   <include file="permissions.zcml" />
 
-  <genericsetup:registerProfile name="default" title="collective.contactformprotection" directory="profiles/default" description="Installs the collective.contactformprotection add-on." provides="Products.GenericSetup.interfaces.EXTENSION" post_handler=".setuphandlers.post_install" />
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.contactformprotection"
+      description="Installs the collective.contactformprotection add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      post_handler=".setuphandlers.post_install"
+      />
 
-  <genericsetup:registerProfile name="uninstall" title="collective.contactformprotection (uninstall)" directory="profiles/uninstall" description="Uninstalls the collective.contactformprotection add-on." provides="Products.GenericSetup.interfaces.EXTENSION" post_handler=".setuphandlers.uninstall" />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.contactformprotection (uninstall)"
+      description="Uninstalls the collective.contactformprotection add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      post_handler=".setuphandlers.uninstall"
+      />
 
-  <utility factory=".setuphandlers.HiddenProfiles" name="collective.contactformprotection-hiddenprofiles" />
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="collective.contactformprotection-hiddenprofiles"
+      />
 
   <!-- -*- extra stuff goes here -*- -->
 
-  <browser:page name="contacformprotection_control_panel-controlpanel" for="Products.CMFPlone.interfaces.IPloneSiteRoot" class=".controlpanel.ContacformprotectionControlPanelView" layer="collective.contactformprotection.interfaces.ICollectiveContactformprotectionLayer" permission="cmf.ManagePortal" />
+  <browser:page
+      name="contacformprotection_control_panel-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.ContacformprotectionControlPanelView"
+      permission="cmf.ManagePortal"
+      layer="collective.contactformprotection.interfaces.ICollectiveContactformprotectionLayer"
+      />
 
   <include package="plone.restapi" />
-  <adapter factory=".controlpanel.ContacformprotectionControlPanelConfigletPanel" name="contacformprotection_control_panel" />
+  <adapter
+      factory=".controlpanel.ContacformprotectionControlPanelConfigletPanel"
+      name="contacformprotection_control_panel"
+      />
 
 
 
