@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
@@ -11,7 +10,6 @@ import collective.contactformprotection
 
 
 class CollectiveContactformprotectionLayer(PloneSandboxLayer):
-
     defaultBases = (PLONE_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
@@ -19,13 +17,15 @@ class CollectiveContactformprotectionLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
         import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.contactformprotection)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.contactformprotection:default')
+        applyProfile(portal, "collective.contactformprotection:default")
 
 
 COLLECTIVE_CONTACTFORMPROTECTION_FIXTURE = CollectiveContactformprotectionLayer()
@@ -33,13 +33,13 @@ COLLECTIVE_CONTACTFORMPROTECTION_FIXTURE = CollectiveContactformprotectionLayer(
 
 COLLECTIVE_CONTACTFORMPROTECTION_INTEGRATION_TESTING = IntegrationTesting(
     bases=(COLLECTIVE_CONTACTFORMPROTECTION_FIXTURE,),
-    name='CollectiveContactformprotectionLayer:IntegrationTesting',
+    name="CollectiveContactformprotectionLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_CONTACTFORMPROTECTION_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_CONTACTFORMPROTECTION_FIXTURE,),
-    name='CollectiveContactformprotectionLayer:FunctionalTesting',
+    name="CollectiveContactformprotectionLayer:FunctionalTesting",
 )
 
 
@@ -49,5 +49,5 @@ COLLECTIVE_CONTACTFORMPROTECTION_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CollectiveContactformprotectionLayer:AcceptanceTesting',
+    name="CollectiveContactformprotectionLayer:AcceptanceTesting",
 )
