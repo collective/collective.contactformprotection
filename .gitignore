@@ -38,3 +38,4 @@ reports/
 venv/
 .mxmake/
 # excludes
+*-mxdev.txt
