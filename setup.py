@@ -59,6 +59,12 @@ setup(
         "plone.app.dexterity",
     ],
     extras_require={
+        "recaptcha": [
+            "plone.formwidget.recaptcha",
+        ],
+        "hcaptcha": [
+            "plone.formwidget.hcaptcha",
+        ],
         "test": [
             "plone.app.testing",
             # Plone KGS does not use this version, because it would break

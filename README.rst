@@ -36,15 +36,22 @@ This package protects the default contact form of Plone which is generally acces
 Features
 --------
 
-- Add a (H/Re)captcha field depending on the installed 3rd party addon. This can be installed as `extra_require` optionally.
-  In case both are installed, you can choose whichone you want in the controlpanel.
-
-```
-eggs =
-    collective.contactformprotection[hcaptcha,recaptcha]
-```
-
 - Provide a checkbox in the controlpanel to disable the form globally
+- Add a H/Recaptcha field depending on the installed 3rd party addon `plone.formwidget.[h|re]captcha`.
+
+
+Captcha support
+---------------
+
+If you have installed `plone.formwidget.recaptcha` or `plone.formwidget.hcaptcha` it is automatically
+added to the form. In case both are installed. In case both are installed, you can make a choice in the controlpanel.
+
+You can install the packages by adding the `extra_required` to this package::
+
+    [buildout]
+    ...
+    eggs =
+        collective.contactformprotection[hcaptcha,recaptcha]
 
 
 Documentation
