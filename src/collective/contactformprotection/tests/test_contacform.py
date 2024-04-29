@@ -1,16 +1,10 @@
 """Setup tests for this package."""
 
-from collective.contactformprotection.testing import \
-    COLLECTIVE_CONTACTFORMPROTECTION_INTEGRATION_TESTING
-from plone import api
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
+from collective.contactformprotection.testing import (
+    COLLECTIVE_CONTACTFORMPROTECTION_INTEGRATION_TESTING,
+)
 from plone.app.testing import SITE_OWNER_NAME
 from plone.app.testing import SITE_OWNER_PASSWORD
-from plone.base.utils import safe_text
-from plone.base.utils import unrestricted_construct_instance
-from plone.namedfile.file import NamedBlobFile
-from plone.registry.interfaces import IRegistry
 from plone.testing.zope import Browser
 
 import unittest
@@ -51,7 +45,10 @@ class TestSetup(unittest.TestCase):
         self.browser.open("http://nohost/plone/contact-info")
 
         # disabled per default
-        self.assertNotIn("formfield-form-widgets-IContactFormCaptchaField-captcha", self.browser.contents)
+        self.assertNotIn(
+            "formfield-form-widgets-IContactFormCaptchaField-captcha",
+            self.browser.contents,
+        )
 
         # enable captcha in controlpanel
         self.browser.open("http://nohost/plone/@@contactformprotection-controlpanel")
@@ -60,4 +57,7 @@ class TestSetup(unittest.TestCase):
 
         self.browser.open("http://nohost/plone/contact-info")
         # field should be visible now
-        self.assertIn("formfield-form-widgets-IContactFormCaptchaField-captcha", self.browser.contents)
+        self.assertIn(
+            "formfield-form-widgets-IContactFormCaptchaField-captcha",
+            self.browser.contents,
+        )

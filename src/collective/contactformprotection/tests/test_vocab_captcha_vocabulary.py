@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
 from collective.contactformprotection import _
-from collective.contactformprotection.testing import COLLECTIVE_CONTACTFORMPROTECTION_INTEGRATION_TESTING  # noqa
+from collective.contactformprotection.testing import (  # noqa
+    COLLECTIVE_CONTACTFORMPROTECTION_INTEGRATION_TESTING,
+)
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from zope.component import getUtility
@@ -16,11 +17,11 @@ class CaptchaVocabularyIntegrationTest(unittest.TestCase):
 
     def setUp(self):
         """Custom shared utility setup for tests."""
-        self.portal = self.layer['portal']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.portal = self.layer["portal"]
+        setRoles(self.portal, TEST_USER_ID, ["Manager"])
 
     def test_vocab_captcha_vocabulary(self):
-        vocab_name = 'contactformprotection.captchavocabulary'
+        vocab_name = "contactformprotection.captchavocabulary"
         factory = getUtility(IVocabularyFactory, vocab_name)
         self.assertTrue(IVocabularyFactory.providedBy(factory))
 
@@ -28,6 +29,6 @@ class CaptchaVocabularyIntegrationTest(unittest.TestCase):
         self.assertTrue(IVocabularyTokenized.providedBy(vocabulary))
         self.assertEqual(len(vocabulary), 2)
         self.assertEqual(
-            vocabulary.getTerm('hcaptcha').title,
-            _(u'HCaptcha'),
+            vocabulary.getTerm("hcaptcha").title,
+            _("HCaptcha"),
         )

@@ -11,3 +11,12 @@ extra_lines = """
 /test_*
 robot_*
 """
+
+[github]
+jobs = [
+    "qa",
+    "test",
+    "coverage",
+    "release_ready",
+    "circular",
+    ]

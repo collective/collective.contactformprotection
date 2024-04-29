@@ -19,7 +19,7 @@ class CaptchaNotFound(Exception):
 
 
 class InvalidCaptchaCode(ValidationError):
-    __doc__ = _(u"Please validate the recaptcha field before sending the form.") # noqa
+    __doc__ = _("Please validate the captcha field before sending the form.")
 
 
 class IContactFormCaptchaField(Interface):
@@ -40,7 +40,7 @@ class ContactForm(ContactInfoForm):
             IContactFormCaptchaField.setTaggedValue(
                 WIDGETS_KEY, {"captcha": ParameterizedWidget(captcha.widget)}
             )
-            return (IContactFormCaptchaField, )
+            return (IContactFormCaptchaField,)
 
         return ()
 
@@ -57,7 +57,7 @@ class CaptchaValidator(validator.SimpleFieldValidator):
     # We adapt the CaptchaValidator class to all form fields (IField)
 
     def validate(self, value):
-        super(CaptchaValidator, self).validate(value)
+        super().validate(value)
         captcha = lookup_captchavocab_item()
 
         if not captcha.validator_view:
@@ -79,4 +79,5 @@ class CaptchaValidator(validator.SimpleFieldValidator):
 # Register Captcha validator for the Captcha field in the
 # IContactFormExtenderFields Form
 validator.WidgetValidatorDiscriminators(
-    CaptchaValidator, field=IContactFormCaptchaField['captcha'])
+    CaptchaValidator, field=IContactFormCaptchaField["captcha"]
+)

@@ -11,10 +11,11 @@
              category="Products"
              condition_expr=""
              icon_expr="string:person-lock"
+             remove="true"
              title="Contacformprotection Control Panel"
              url_expr="string:${portal_url}/@@contactformprotection-controlpanel"
              visible="True"
              i18n:attributes="title"
-             remove="true" />
+  />
 
 </object>

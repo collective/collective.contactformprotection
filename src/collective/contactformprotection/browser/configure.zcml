@@ -13,7 +13,7 @@
       layer="..interfaces.ICollectiveContactformprotectionLayer"
       />
 
-      <adapter
+  <adapter
       factory=".contactform.CaptchaValidator"
       provides="z3c.form.interfaces.IValidator"
       />

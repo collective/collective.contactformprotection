@@ -54,9 +54,11 @@ setup(
     install_requires=[
         "setuptools",
         # -*- Extra requirements: -*-
-        "z3c.jbot",
+        "Products.CMFPlone",
         "plone.api>=1.8.4",
         "plone.app.dexterity",
+        "plone.app.registry",
+        "z3c.form",
     ],
     extras_require={
         "recaptcha": [

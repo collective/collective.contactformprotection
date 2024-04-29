@@ -36,7 +36,9 @@ class CollectiveContactformprotectionLayer(PloneSandboxLayer):
         applyProfile(portal, "plone.formwidget.recaptcha:default")
         applyProfile(portal, "collective.contactformprotection:default")
         # basic mailsetup
-        api.portal.set_registry_record("plone.email_from_address", "test@localhost.local")
+        api.portal.set_registry_record(
+            "plone.email_from_address", "test@localhost.local"
+        )
         api.portal.set_registry_record("plone.email_from_name", "testuser")
 
 

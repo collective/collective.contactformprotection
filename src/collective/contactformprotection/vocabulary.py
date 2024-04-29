@@ -8,7 +8,7 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-class CaptchaVocabItem(object):
+class CaptchaVocabItem:
     def __init__(self, token, value, widget=None, validator_view=""):
         self.token = token
         self.value = value
@@ -17,9 +17,8 @@ class CaptchaVocabItem(object):
 
 
 @implementer(IVocabularyFactory)
-class CaptchaVocabulary(object):
-    """
-    """
+class CaptchaVocabulary:
+    """ """
 
     def __call__(self, context):
         # Just an example list of content for our vocabulary,
@@ -29,18 +28,24 @@ class CaptchaVocabulary(object):
 
         try:
             from plone.formwidget.hcaptcha import HCaptchaFieldWidget
+
             if installer.is_product_installed("plone.formwidget.hcaptcha"):
                 items.append(
-                    CaptchaVocabItem("hcaptcha", _("HCaptcha"), HCaptchaFieldWidget, "hcaptcha")
+                    CaptchaVocabItem(
+                        "hcaptcha", _("HCaptcha"), HCaptchaFieldWidget, "hcaptcha"
+                    )
                 )
         except ImportError:
             pass
 
         try:
             from plone.formwidget.recaptcha import ReCaptchaFieldWidget
+
             if installer.is_product_installed("plone.formwidget.recaptcha"):
                 items.append(
-                    CaptchaVocabItem("recaptcha", _("ReCaptcha"), ReCaptchaFieldWidget, "recaptcha")
+                    CaptchaVocabItem(
+                        "recaptcha", _("ReCaptcha"), ReCaptchaFieldWidget, "recaptcha"
+                    )
                 )
         except ImportError:
             pass
