@@ -10,24 +10,24 @@
 collective.contactformprotection
 ================================
 
-This package protects the default contact form of Plone which is generally accessible via `/contact-info`.
-If you have installed this product, you can go to the `Contacformprotection Control Panel` and adjust its settings.
+This package protects the default contact form of Plone which is generally accessible via ``/contact-info``.
+If you have installed this product, you can go to the ``Contacformprotection Control Panel`` and adjust its settings.
 
 
 Settings
 --------
 
 - Provide a checkbox in the controlpanel to disable the form globally
-- Add a H/Recaptcha field depending on the installed 3rd party addon `plone.formwidget.[h|re]captcha`.
+- Add a H/Recaptcha field depending on the installed 3rd party addon ``plone.formwidget.[h|re]captcha``.
 
 
 Captcha support
 ---------------
 
-If you have installed `plone.formwidget.recaptcha` or `plone.formwidget.hcaptcha` it is automatically
+If you have installed ``plone.formwidget.recaptcha`` or ``plone.formwidget.hcaptcha`` it is automatically
 added to the form. In case both are installed. In case both are installed, you can make a choice in the controlpanel.
 
-You can install the packages by adding the `extra_required` to this package::
+You can install the packages by adding the ``extra_required`` to this package::
 
     [buildout]
     ...
@@ -35,7 +35,7 @@ You can install the packages by adding the `extra_required` to this package::
         collective.contactformprotection[hcaptcha,recaptcha]
 
 
-The settings mentioned above are all set in the configuration registry. See `plone.app.registry` how to set these
+The settings mentioned above are all set in the configuration registry. See ``plone.app.registry`` how to set these
 values TTW or in a package profile.
 
 
@@ -68,7 +68,7 @@ The captcha settings is provided by a zope vocabulary with enhanced term objects
             self.validator_view = validator_view
 
 If you have additional captcha addons or want to override the provided widget and validator view, you can
-override the vocabulary utility `contactformprotection.captchavocabulary` with your terms using.
+override the vocabulary utility ``contactformprotection.captchavocabulary`` with your terms using.
 
 
 
