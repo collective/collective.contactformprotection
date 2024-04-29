@@ -5,21 +5,17 @@
     i18n_domain="collective.contactformprotection"
     >
 
-  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <include
-      package="z3c.jbot"
-      file="meta.zcml"
-      />
-  <browser:jbot
-      directory="overrides"
-      layer="collective.contactformprotection.interfaces.ICollectiveContactformprotectionLayer"
+  <browser:page
+      name="contact-info"
+      for="*"
+      class=".contactform.ContactForm"
+      permission="zope2.View"
+      layer="..interfaces.ICollectiveContactformprotectionLayer"
       />
 
-  <!-- Publish static files -->
-  <plone:static
-      directory="static"
-      name="collective.contactformprotection"
-      type="plone"
+      <adapter
+      factory=".contactform.CaptchaValidator"
+      provides="z3c.form.interfaces.IValidator"
       />
 
 </configure>

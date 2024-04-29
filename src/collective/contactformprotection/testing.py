@@ -1,3 +1,4 @@
+from plone import api
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
@@ -19,13 +20,24 @@ class CollectiveContactformprotectionLayer(PloneSandboxLayer):
         import plone.app.dexterity
 
         self.loadZCML(package=plone.app.dexterity)
-        import plone.restapi
 
-        self.loadZCML(package=plone.restapi)
+        import plone.formwidget.recaptcha
+
+        self.loadZCML(package=plone.formwidget.recaptcha)
+
+        import plone.formwidget.hcaptcha
+
+        self.loadZCML(package=plone.formwidget.hcaptcha)
+
         self.loadZCML(package=collective.contactformprotection)
 
     def setUpPloneSite(self, portal):
+        applyProfile(portal, "plone.formwidget.hcaptcha:default")
+        applyProfile(portal, "plone.formwidget.recaptcha:default")
         applyProfile(portal, "collective.contactformprotection:default")
+        # basic mailsetup
+        api.portal.set_registry_record("plone.email_from_address", "test@localhost.local")
+        api.portal.set_registry_record("plone.email_from_name", "testuser")
 
 
 COLLECTIVE_CONTACTFORMPROTECTION_FIXTURE = CollectiveContactformprotectionLayer()

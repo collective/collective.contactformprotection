@@ -8,4 +8,6 @@ commit-id = "1c2155e4"
 [gitignore]
 extra_lines = """
 /.mxmake/
+/test_*
+robot_*
 """

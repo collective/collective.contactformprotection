@@ -47,6 +47,8 @@ local.cfg
 .installed.txt
 
 /.mxmake/
+/test_*
+robot_*
 
 ##
 # Add extra configuration options in .meta.toml:

@@ -39,19 +39,16 @@
   <!-- -*- extra stuff goes here -*- -->
 
   <browser:page
-      name="contacformprotection_control_panel-controlpanel"
+      name="contactformprotection-controlpanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class=".controlpanel.ContacformprotectionControlPanelView"
       permission="cmf.ManagePortal"
       layer="collective.contactformprotection.interfaces.ICollectiveContactformprotectionLayer"
       />
 
-  <include package="plone.restapi" />
-  <adapter
-      factory=".controlpanel.ContacformprotectionControlPanelConfigletPanel"
-      name="contacformprotection_control_panel"
+  <utility
+      name="contactformprotection.captchavocabulary"
+      component=".vocabulary.CaptchaVocabularyFactory"
       />
-
-
 
 </configure>

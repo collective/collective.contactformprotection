@@ -15,9 +15,6 @@
              url_expr="string:${portal_url}/@@contactformprotection-controlpanel"
              visible="True"
              i18n:attributes="title"
-  >
-    <permission>Site Administrator</permission>
-  </configlet>
-
+             remove="true" />
 
 </object>

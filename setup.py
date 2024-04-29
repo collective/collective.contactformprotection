@@ -73,6 +73,8 @@ setup(
             "plone.testing>=5.0.0",
             "plone.app.contenttypes",
             "plone.app.robotframework[debug]",
+            "plone.formwidget.recaptcha",
+            "plone.formwidget.hcaptcha",
         ],
     },
     entry_points="""
