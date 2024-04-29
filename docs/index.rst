@@ -1,5 +1,0 @@
-================================
-collective.contactformprotection
-================================
-
-User documentation
