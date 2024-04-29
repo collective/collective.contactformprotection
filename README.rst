@@ -68,7 +68,7 @@ The captcha settings is provided by a zope vocabulary with enhanced term objects
             self.validator_view = validator_view
 
 If you have additional captcha addons or want to override the provided widget and validator view, you can
-override the vocabulary utility ``contactformprotection.captchavocabulary`` with your terms using.
+override the vocabulary utility ``contactformprotection.captchavocabulary`` with your terms.
 
 
 
