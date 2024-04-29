@@ -25,7 +25,7 @@ Captcha support
 ---------------
 
 If you have installed ``plone.formwidget.recaptcha`` or ``plone.formwidget.hcaptcha`` it is automatically
-added to the form. In case both are installed. In case both are installed, you can make a choice in the controlpanel.
+added to the form. In case both are installed, you can make a choice in the controlpanel.
 
 You can install the packages by adding the ``extra_required`` to this package::
 
