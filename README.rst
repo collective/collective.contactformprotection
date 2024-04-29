@@ -5,35 +5,16 @@
 .. image:: https://github.com/collective/collective.contactformprotection/actions/workflows/plone-package.yml/badge.svg
     :target: https://github.com/collective/collective.contactformprotection/actions/workflows/plone-package.yml
 
-.. image:: https://coveralls.io/repos/github/collective/collective.contactformprotection/badge.svg?branch=main
-    :target: https://coveralls.io/github/collective/collective.contactformprotection?branch=main
-    :alt: Coveralls
-
-.. image:: https://codecov.io/gh/collective/collective.contactformprotection/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/collective/collective.contactformprotection
-
-.. image:: https://img.shields.io/pypi/v/collective.contactformprotection.svg
-    :target: https://pypi.python.org/pypi/collective.contactformprotection/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/status/collective.contactformprotection.svg
-    :target: https://pypi.python.org/pypi/collective.contactformprotection
-    :alt: Egg Status
-
-.. image:: https://img.shields.io/pypi/pyversions/collective.contactformprotection.svg?style=plastic   :alt: Supported - Python Versions
-
-.. image:: https://img.shields.io/pypi/l/collective.contactformprotection.svg
-    :target: https://pypi.python.org/pypi/collective.contactformprotection/
-    :alt: License
-
 
 ================================
 collective.contactformprotection
 ================================
 
 This package protects the default contact form of Plone which is generally accessible via `/contact-info`.
+If you have installed this product, you can go to the `Contacformprotection Control Panel` and adjust its settings.
 
-Features
+
+Settings
 --------
 
 - Provide a checkbox in the controlpanel to disable the form globally
@@ -54,10 +35,7 @@ You can install the packages by adding the `extra_required` to this package::
         collective.contactformprotection[hcaptcha,recaptcha]
 
 
-Documentation
--------------
-
-The features mentioned above are all set in the configuration registry. See `plone.app.registry` how to set these
+The settings mentioned above are all set in the configuration registry. See `plone.app.registry` how to set these
 values TTW or in a package profile.
 
 
@@ -75,6 +53,23 @@ Install collective.contactformprotection by adding it to your buildout::
 
 
 and then running ``bin/buildout``
+
+
+Customizing Captcha vocabulary
+------------------------------
+
+The captcha settings is provided by a zope vocabulary with enhanced term objects::
+
+    class CaptchaVocabItem(object):
+        def __init__(self, token, value, widget=None, validator_view=""):
+            self.token = token
+            self.value = value
+            self.widget = widget
+            self.validator_view = validator_view
+
+If you have additional captcha addons or want to override the provided widget and validator view, you can
+override the vocabulary utility `contactformprotection.captchavocabulary` with your terms using.
+
 
 
 Authors
