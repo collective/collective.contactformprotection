@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-04-29 10:49+0000\n"
+"POT-Creation-Date: 2024-04-29 13:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Captcha code"
 msgstr ""
 
-#: collective/contactformprotection/controlpanel.py:28
+#: collective/contactformprotection/controlpanel.py:31
 #: collective/contactformprotection/profiles/default/controlpanel.xml
 #: collective/contactformprotection/profiles/uninstall/controlpanel.xml
 msgid "Contacformprotection Control Panel"
@@ -41,6 +41,10 @@ msgstr ""
 
 #: collective/contactformprotection/vocabulary.py:35
 msgid "HCaptcha"
+msgstr ""
+
+#: collective/contactformprotection/controlpanel.py:20
+msgid "If you have installed the 'plone.formwidget(h/re)captcha' addon, you can choose which one you want to show in the form."
 msgstr ""
 
 #: collective/contactformprotection/configure.zcml:23
