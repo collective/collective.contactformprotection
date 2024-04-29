@@ -19,7 +19,8 @@ class IContacformprotectionControlPanel(Interface):
         ),
         description=_(
             "If you have installed the 'plone.formwidget(h/re)captcha' addon, "
-            "you can choose which one you want to show in the form."),
+            "you can choose which one you want to show in the form."
+        ),
         vocabulary="contactformprotection.captchavocabulary",
         required=False,
     )
