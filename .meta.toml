@@ -13,7 +13,11 @@ robot_*
 """
 
 [github]
-jobs = ["qa", "test", "coverage", "release_ready"]
+jobs = [
+   "qa",
+   "coverage",
+   "release_ready",
+]
 
 [tox]
 test_matrix = { "6.2" = ["3.13"], "6.1" = ["3.12"], "6.0" = ["3.10"] }
