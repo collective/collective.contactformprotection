@@ -15,7 +15,7 @@ long_description = "\n\n".join(
 
 setup(
     name="collective.contactformprotection",
-    version="1.0.1.dev0",
+    version="1.1.0.dev0",
     description="This package protects the default contact form of Plone which is generally accessible via /contact-form. It provides a checkbox in the controlpanel to disable it globally and adds a (H/Re)captcha field depending on your installation.",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
@@ -67,6 +67,9 @@ setup(
         "hcaptcha": [
             "plone.formwidget.hcaptcha",
         ],
+        "norobots": [
+            "collective.z3cform.norobots",
+        ],
         "test": [
             "plone.app.testing",
             # Plone KGS does not use this version, because it would break
@@ -77,6 +80,7 @@ setup(
             "plone.app.robotframework[debug]",
             "plone.formwidget.recaptcha",
             "plone.formwidget.hcaptcha",
+            "collective.z3cform.norobots",
         ],
     },
     entry_points="""

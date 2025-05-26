@@ -18,13 +18,13 @@ Settings
 --------
 
 - Provide a checkbox in the controlpanel to disable the form globally
-- Add a H/Recaptcha field depending on the installed 3rd party addon ``plone.formwidget.[h|re]captcha``.
+- Add a H/Recaptcha/Norobots field depending on the installed 3rd party addon ``plone.formwidget.[h|re]captcha`` or ``collective.z3cform.norobots``.
 
 
 Captcha support
 ---------------
 
-If you have installed ``plone.formwidget.recaptcha`` or ``plone.formwidget.hcaptcha`` it is automatically
+If you have installed ``plone.formwidget.recaptcha``, ``plone.formwidget.hcaptcha`` or ``collective.z3cform.norobots`` it is automatically
 added to the form. In case both are installed, you can make a choice in the controlpanel.
 
 You can install the packages by adding the ``extra_required`` to this package::
@@ -32,7 +32,7 @@ You can install the packages by adding the ``extra_required`` to this package::
     [buildout]
     ...
     eggs =
-        collective.contactformprotection[hcaptcha,recaptcha]
+        collective.contactformprotection[hcaptcha,recaptcha,norobots]
 
 
 The settings mentioned above are all set in the configuration registry. See ``plone.app.registry`` how to set these

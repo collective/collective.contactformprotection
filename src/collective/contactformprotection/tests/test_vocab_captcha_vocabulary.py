@@ -27,7 +27,7 @@ class CaptchaVocabularyIntegrationTest(unittest.TestCase):
 
         vocabulary = factory(self.portal)
         self.assertTrue(IVocabularyTokenized.providedBy(vocabulary))
-        self.assertEqual(len(vocabulary), 2)
+        self.assertEqual(len(vocabulary), 3)
         self.assertEqual(
             vocabulary.getTerm("hcaptcha").title,
             _("HCaptcha"),
