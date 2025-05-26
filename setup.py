@@ -67,6 +67,9 @@ setup(
         "hcaptcha": [
             "plone.formwidget.hcaptcha",
         ],
+        "norobots": [
+            "collective.z3cform.norobots",
+        ],
         "test": [
             "plone.app.testing",
             # Plone KGS does not use this version, because it would break
@@ -77,6 +80,7 @@ setup(
             "plone.app.robotframework[debug]",
             "plone.formwidget.recaptcha",
             "plone.formwidget.hcaptcha",
+            "collective.z3cform.norobots",
         ],
     },
     entry_points="""

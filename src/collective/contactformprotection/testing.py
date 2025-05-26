@@ -29,11 +29,16 @@ class CollectiveContactformprotectionLayer(PloneSandboxLayer):
 
         self.loadZCML(package=plone.formwidget.hcaptcha)
 
+        import collective.z3cform.norobots
+
+        self.loadZCML(package=collective.z3cform.norobots)
+
         self.loadZCML(package=collective.contactformprotection)
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, "plone.formwidget.hcaptcha:default")
         applyProfile(portal, "plone.formwidget.recaptcha:default")
+        applyProfile(portal, "collective.z3cform.norobots:default")
         applyProfile(portal, "collective.contactformprotection:default")
         # basic mailsetup
         api.portal.set_registry_record(

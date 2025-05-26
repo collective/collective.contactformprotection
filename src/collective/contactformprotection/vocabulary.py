@@ -50,6 +50,18 @@ class CaptchaVocabulary:
         except ImportError:
             pass
 
+        try:
+            from collective.z3cform.norobots import NorobotsFieldWidget
+
+            if installer.is_product_installed("collective.z3cform.norobots"):
+                items.append(
+                    CaptchaVocabItem(
+                        "norobots", _("Norobots"), NorobotsFieldWidget, "norobots"
+                    )
+                )
+        except ImportError:
+            pass
+
         # create a list of SimpleTerm items:
         terms = []
         for item in items:

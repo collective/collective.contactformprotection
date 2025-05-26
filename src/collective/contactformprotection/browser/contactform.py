@@ -68,7 +68,7 @@ class CaptchaValidator(validator.SimpleFieldValidator):
                 (aq_inner(self.context), self.request),
                 name=captcha.validator_view,
             )
-            if not captcha.verify():
+            if not captcha.verify(value):
                 raise InvalidCaptchaCode
         except ComponentLookupError:
             raise InvalidCaptchaCode
