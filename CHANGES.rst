@@ -2,10 +2,10 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+1.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Implement collective.z3cform.norobots support. @petschki
 
 
 1.0.0 (2024-04-29)
