@@ -1,6 +1,5 @@
 """Installer for the collective.contactformprotection package."""
 
-from setuptools import find_packages
 from setuptools import setup
 
 long_description = "\n\n".join(
@@ -46,14 +45,10 @@ setup(
         # 'Documentation': 'https://collective.contactformprotection.readthedocs.io/en/latest/',
     },
     license="GPL version 3",
-    packages=find_packages("src", exclude=["ez_setup"]),
-    namespace_packages=["collective"],
-    package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
     python_requires=">=3.10",
     install_requires=[
-        "setuptools",
         # -*- Extra requirements: -*-
         "Products.CMFPlone",
         "plone.api>=1.8.4",
