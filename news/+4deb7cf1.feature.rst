@@ -1,3 +1,3 @@
 Add support for Plone 6.1, 6.2, and related Pythons.
-Drop support for Python 3.8.
+Drop support for Python 3.8 and 3.9.
 [maurits]
