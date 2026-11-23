@@ -51,6 +51,13 @@ class ContactForm(ContactInfoForm):
             default=False,
         )
 
+    def update(self):
+        if not self.enabled:
+            # Do not process the request at all: a POST sent directly to the
+            # view must not send a mail when the form is disabled.
+            return
+        super().update()
+
 
 class CaptchaValidator(validator.SimpleFieldValidator):
     # Object, Request, Form, Field, Widget,
